@@ -27,6 +27,10 @@ def run_hangman():
 
         guess: str = input('Please enter a letter: ')
 
+        if len(guess) > 1 and guess == word:
+            guessed += guess
+            continue
+
         if guess in guessed:
             print(f"You've already entered the '{guess}', please enter another letter.")
             continue
